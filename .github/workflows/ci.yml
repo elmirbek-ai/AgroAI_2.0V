@@ -22,7 +22,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install lightweight test dependencies
-        run: python -m pip install "python-dotenv>=1,<2"
+        run: python -m pip install "python-dotenv>=1,<2" "SQLAlchemy>=2,<3"
 
       - name: Compile Python source
         run: |
