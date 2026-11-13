@@ -39,7 +39,7 @@ python -m pip install -r requirements.txt
 cp .env.example .env
 ```
 
-4. Configure PostgreSQL and start Redis locally.
+4. Set `DATABASE_URL` and a random `SECRET_KEY` (at least 32 characters) in your local `.env`. Configure PostgreSQL and start Redis locally. Set `CORS_ALLOWED_ORIGINS` to the explicit frontend origins you use (comma-separated).
 5. Apply migrations:
 
 ```bash
@@ -61,7 +61,8 @@ Swagger is available at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 | `SECRET_KEY` | JWT signing secret |
 | `WEATHER_API_KEY` | OpenWeather API key |
 | `DATABASE_URL` | PostgreSQL connection URL |
-| `REDIS_URL` | Redis connection URL |
+| `REDIS_URL` | Redis connection URL (defaults to localhost for development) |
+| `CORS_ALLOWED_ORIGINS` | Comma-separated trusted frontend origins |
 
 Never commit real values. The previously tracked `.env` must be treated as exposed: rotate any active keys and remove the file from Git history before a production release.
 
